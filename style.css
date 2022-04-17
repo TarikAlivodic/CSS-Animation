@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.background{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(32, 20, 43);
+    overflow: hidden;
+}
+.moon{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 120px;
+    right: 160px;
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgb(105, 100, 100),
+    0 0 60px rgb(105, 100, 100),
+    0 0 80px rgb(105, 100, 100),
+    0 0 100px rgb(105, 100, 100);
+    background-color: rgb(211, 189, 189);
+    animation: moon 60s linear infinite;
+}
+@keyframes moon{
+    0%{
+        transform: translateX(150px);
+    }
+    100%{
+        transform: translateX(-2000px);
+    }
+}
+.road{
+    position: absolute;
+    width: 100%;
+    height: 240px;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgb(37, 36, 36);
+}
+.road::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(184,144,96);
+}
+.road::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 8px;
+    background: repeating-linear-gradient(90deg, transparent 0, transparent 50%, white 50%, white 100%);
+    background-size: 65px;
+    animation: road .2s linear infinite;
+}
+@keyframes road{
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: -65px;
+    } 
+}
+.fa-truck-field{
+    position: absolute;
+    color: rgb(98, 87, 119);
+    font-size: 140px;
+    bottom: 120px;
+    left: 170px;
+    z-index: 3;
+    -webkit-text-stroke: 2px black;
+    animation: van .2s linear infinite;
+}
+@keyframes van{
+    50%{
+        transform: translateY(2px);
+    }
+}
+.fa-cloud{
+    position: absolute;
+    top: calc(35px * var(--i));
+    left: calc(45px * var(--i));
+    font-size: 150px;
+    color: rgb(53, 50, 50);
+    -webkit-text-stroke: 2px black;
+    z-index: 2;
+    animation: cloud 6.5s linear infinite;
+    animation-delay: calc(-4s * var(--i));
+}
+@keyframes cloud{
+    0%{
+        transform: translateX(1500px);
+    }
+    100%{
+        transform: translateX(-1300px);
+    }
+}
+.fa-tree{
+    position: absolute;
+    color: rgb(25, 66, 28);
+    font-size: 110px;
+    z-index: 2;
+    bottom: 210px;
+    -webkit-text-stroke: 1px black;
+    animation: tree 9s linear infinite;
+    animation-delay: calc(-3s * var(--i));
+}
+@keyframes tree{
+    0%{
+        transform: translateX(1500px);
+    }
+    100%{
+        transform: translateX(-1500px);
+    }
+}
+.fa-mountain{
+    position: absolute;
+    bottom: 150px;
+    z-index: 1;
+    font-size: 460px;
+    color: rgb(43, 30, 30);
+    -webkit-text-stroke: 1px black;
+    animation: mountain 15s linear infinite;
+    animation-delay: calc(-7.5s * var(--i));
+}
+@keyframes mountain{
+    0%{
+        transform: translateX(1500px);
+    }
+    100%{
+        transform: translateX(-500px);
+    }   
+}
